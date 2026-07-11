@@ -16,9 +16,9 @@ node {
     stage('Install Dependencies') {
         echo 'Installing dependencies...'
         if (isUnix()) {
-            sh 'python3 -m pip install -r requirements.txt'
+            sh 'python3 -m pip install --break-system-packages -r requirements.txt'
         } else {
-            bat 'python3 -m pip install -r requirements.txt'
+            bat 'python3 -m pip install --break-system-packages -r requirements.txt'
         }
     }
     stage('Run Application') {
